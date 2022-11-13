@@ -6,7 +6,7 @@ psql_password=$5
 
 if [ $# -ne 5 ]; then
   echo "Incorrect number of arguments"
-  echo "Usage: host_info.sh host port db_name username password"
+  echo "Usage: host_info.sh hostname port db_name username password"
   exit 1
 fi
 
