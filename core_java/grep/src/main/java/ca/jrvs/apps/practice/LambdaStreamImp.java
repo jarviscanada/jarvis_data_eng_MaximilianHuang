@@ -10,6 +10,10 @@ import java.util.stream.Stream;
 
 public class LambdaStreamImp implements LambdaStreamExc {
 
+  public static void main(String[] args) {
+    LambdaStreamExc lse = new LambdaStreamImp();
+  }
+
   @Override
   public Stream<String> createStrStream(String... strings) {
     return Arrays.stream(strings);
@@ -58,21 +62,21 @@ public class LambdaStreamImp implements LambdaStreamExc {
 
   @Override
   public Consumer<String> getLambdaPrinter(String prefix, String suffix) {
-    return null;
+    return str -> System.out.printf(prefix + str + suffix);
   }
 
   @Override
   public void printMessages(String[] messages, Consumer<String> printer) {
-
+    createStrStream(messages).forEach(printer);
   }
 
   @Override
   public void printOdd(IntStream intStream, Consumer<String> printer) {
-
+    getOdd(intStream).mapToObj(String::valueOf).forEach(printer);
   }
 
   @Override
   public Stream<Integer> flatNestedInt(Stream<List<Integer>> ints) {
-    return null;
+    return ints.flatMap(lst -> lst.stream().map(i -> i * i));
   }
 }
