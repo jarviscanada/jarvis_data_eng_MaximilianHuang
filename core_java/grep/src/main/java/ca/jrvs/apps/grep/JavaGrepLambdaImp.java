@@ -38,8 +38,7 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
         .map(Path::toFile);
     Stream<String> matchedLines = fileList
         .map(this::readLines)
-        .flatMap(Collection::stream)
-        .filter(this::containsPattern);
+        .flatMap(Collection::stream);
     writeToFileFromStream(matchedLines);
   }
 
@@ -57,7 +56,10 @@ public class JavaGrepLambdaImp extends JavaGrepImp {
   @Override
   public List<String> readLines(File inputFile) {
     try (BufferedReader bufferedReader = Files.newBufferedReader(inputFile.toPath())) {
-      return bufferedReader.lines().collect(Collectors.toList());
+      return bufferedReader
+          .lines()
+          .filter(this::containsPattern)
+          .collect(Collectors.toList());
     } catch (IOException ex) {
       logger.error("Error: unable to read file" + ex);
       ex.printStackTrace();
