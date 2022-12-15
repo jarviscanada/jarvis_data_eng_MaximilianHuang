@@ -17,24 +17,23 @@ import org.junit.Test;
 public class TwitterDaoIntTest {
 
   private TwitterDao dao;
+  private static String consumerKey;
+  private static String consumerSecret;
+  private static String accessToken;
+  private static String tokenSecret;
 
   @BeforeClass
   public static void setupClass() {
-    String consumerKey = System.getenv("consumerKey");
-    String consumerSecret = System.getenv("consumerSecret");
-    String accessToken = System.getenv("accessToken");
-    String tokenSecret = System.getenv("tokenSecret");
+    consumerKey = System.getenv("consumerKey");
+    consumerSecret = System.getenv("consumerSecret");
+    accessToken = System.getenv("accessToken");
+    tokenSecret = System.getenv("tokenSecret");
     System.out.println(consumerKey + "\n" + consumerSecret + "\n" + accessToken
         + " " + tokenSecret);
   }
 
   @Before
   public void setupTest() {
-    String consumerKey = System.getenv("consumerKey");
-    String consumerSecret = System.getenv("consumerSecret");
-    String accessToken = System.getenv("accessToken");
-    String tokenSecret = System.getenv("tokenSecret");
-
     HttpHelper httpHelper = new TwitterHttpHelper(consumerKey, consumerSecret,
         accessToken, tokenSecret);
     dao = new TwitterDao(httpHelper);
