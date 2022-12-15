@@ -29,8 +29,8 @@ public class TwitterService implements Service {
       throw new IllegalArgumentException("Tweet text cannot be empty");
     }
 
-    if (text.length() > 140) {
-      throw new IllegalArgumentException("Tweet text exceeds 140 characters");
+    if (text.length() > 280) {
+      throw new IllegalArgumentException("Tweet text exceeds 280 characters");
     }
 
     if ((lat > 90.0) || (lat < -90.0)) {
