@@ -1,6 +1,7 @@
 package ca.jrvs.apps.twitter.service;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -31,18 +32,21 @@ public class TwitterServiceUnitTest {
     // Failing test cases
     try {
       service.postTweet(TweetUtil.buildTweet("", 50.0, 0.0));
+      fail();
     } catch (IllegalArgumentException e) {
       assertTrue(true);
     }
 
     try {
       service.postTweet(TweetUtil.buildTweet("a", 181.0, 0.0));
+      fail();
     } catch (IllegalArgumentException e) {
       assertTrue(true);
     }
 
     try {
       service.postTweet(TweetUtil.buildTweet("a", 50.0, 91.0));
+      fail();
     } catch (IllegalArgumentException e) {
       assertTrue(true);
     }
@@ -55,6 +59,7 @@ public class TwitterServiceUnitTest {
 
     try {
       service.showTweet("abc", null);
+      fail();
     } catch (IllegalArgumentException e) {
       assertTrue(true);
     }
@@ -68,6 +73,7 @@ public class TwitterServiceUnitTest {
 
     try {
       service.deleteTweets(new String[] {"123", "234", "abc", "456"});
+      fail();
     } catch (IllegalArgumentException e) {
       assertTrue(true);
     }
