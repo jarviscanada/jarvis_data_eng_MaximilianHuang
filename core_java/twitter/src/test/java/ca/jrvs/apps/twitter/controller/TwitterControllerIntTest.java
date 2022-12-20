@@ -54,7 +54,7 @@ public class TwitterControllerIntTest {
 
     assertNotNull(tweet.getCoordinates());
     assertEquals(2, tweet.getCoordinates().getCoordinates().size());
-    assertEquals((Double) 50d, tweet.getCoordinates().getLongitude());
+    assertEquals((Double) 60d, tweet.getCoordinates().getLongitude());
 
     assertTrue(hashtag.contains(tweet.getEntities().getHashtags().get(0).getText()));
   }
@@ -74,7 +74,7 @@ public class TwitterControllerIntTest {
 
     assertNotNull(tweet.getCoordinates());
     assertEquals(2, tweet.getCoordinates().getCoordinates().size());
-    assertEquals((Double) 50d, tweet.getCoordinates().getLongitude());
+    assertEquals((Double) 60d, tweet.getCoordinates().getLongitude());
   }
 
   @Test
@@ -94,6 +94,6 @@ public class TwitterControllerIntTest {
 
     assertNotNull(tweet.getCoordinates());
     assertEquals(2, tweet.getCoordinates().getCoordinates().size());
-    assertEquals((Double) 50d, tweet.getCoordinates().getLongitude());
+    assertEquals((Double) 60d, tweet.getCoordinates().getLongitude());
   }
 }
