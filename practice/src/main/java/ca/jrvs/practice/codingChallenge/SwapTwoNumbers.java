@@ -1,7 +1,7 @@
 package ca.jrvs.practice.codingChallenge;
 
 /*
- * https://www.notion.so/jarvisdev/Swap-two-numbers-50a6bcaa3cc14bbbb0e94fc64cc0573d
+ * Ticket: https://www.notion.so/jarvisdev/Swap-two-numbers-50a6bcaa3cc14bbbb0e94fc64cc0573d
  */
 public class SwapTwoNumbers {
   // Swap two numbers without using a third variable
