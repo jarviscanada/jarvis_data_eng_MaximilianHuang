@@ -8,7 +8,7 @@ I am a recent graduate of the University of Toronto Mississauga with a bachelor'
 
 **Competent:** Javascript, React, Node.js, Express.js, Docker, LaTeX
 
-**Familiar:** Haskell, MongoDB, HTML, CSS, AngularJS
+**Familiar:** Haskell, MongoDB, HTML, CSS, Angular
 
 ## Jarvis Projects
 
